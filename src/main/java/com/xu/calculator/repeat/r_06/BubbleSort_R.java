@@ -25,6 +25,7 @@ public class BubbleSort_R {
 //        sort(arr);
 //        InsertSort_R.sort(arr);
 //        SelectionSort_R.sort(arr);
+        // test commit
         MergerSort_R.sort(arr);
         SortUtil.print(arr);
 

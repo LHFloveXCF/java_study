@@ -1,6 +1,7 @@
 package com.xu.calculator.repeat.r_06;
 
 import com.xu.calculator.DataCheck;
+import com.xu.calculator.l_06.lesson06.HeapSort;
 import com.xu.util.SortUtil;
 
 /**
@@ -20,13 +21,15 @@ public class BubbleSort_R {
     }
 
     public static void main(String[] args) {
-        int[] arr = DataCheck.generateArr(10);
+        int[] arr = DataCheck.generateArr(6);
         SortUtil.print(arr);
 //        sort(arr);
 //        InsertSort_R.sort(arr);
 //        SelectionSort_R.sort(arr);
         // test commit
-        MergerSort_R.sort(arr);
+//        MergerSort_R.sort(arr);
+//        QuickSort_R.sort(arr);
+        HeapSort.sort(arr);
         SortUtil.print(arr);
 
     }

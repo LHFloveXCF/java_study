@@ -1,7 +1,5 @@
 package com.xu.calculator.entity;
 
-import sun.applet.Main;
-
 /**
  * java_study
  * 二叉树
@@ -13,6 +11,33 @@ public class BinaryNode {
 
     public BinaryNode(int value) {
         this.value = value;
+    }
+
+    /**
+     * 随机生成一个二叉树
+     * @param maxLevel      二叉树可能的最大层数
+     * @param maxValue      二叉树树种节点可能出现的最大值
+     * @return              随机二叉树头结点
+     */
+    public static BinaryNode generate2(int maxLevel, int maxValue) {
+        return generate_2(1, maxLevel, maxValue);
+    }
+
+    /**
+     * 生成二叉树
+     * @param level         二叉树当前层数
+     * @param maxLevel      二叉树可能的最大层数
+     * @param maxValue      二叉树树种节点可能出现的最大值
+     * @return              随机二叉树头结点
+     */
+    private static BinaryNode generate_2(int level, int maxLevel, int maxValue) {
+        if (level > maxLevel || Math.random() < 0.5) {
+            return null;
+        }
+        BinaryNode node = new BinaryNode((int) (Math.random() * maxValue));
+        node.left = generate_2(level + 1, maxLevel, maxValue);
+        node.right = generate_2(level + 1, maxLevel, maxValue);
+        return node;
     }
 
     /**
@@ -32,7 +57,7 @@ public class BinaryNode {
             return;
         }
         int range = (int) (Math.random() * 20);
-        if (Math.random() < 1) {
+        if (Math.random() < 0.5) {
             node.left = new BinaryNode((int) (Math.random() * range));
             node.right = new BinaryNode((int) (Math.random() * range));
         } else {

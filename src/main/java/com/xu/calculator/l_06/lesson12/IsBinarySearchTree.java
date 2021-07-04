@@ -44,10 +44,10 @@ public class IsBinarySearchTree {
         Info rightInfo = process(head.right);
         int min = head.value;
         if (leftInfo != null) {
-            min = Math.min(min, leftInfo.max);
+            min = Math.min(min, leftInfo.min);
         }
         if (rightInfo != null) {
-            min = Math.min(min, rightInfo.max);
+            min = Math.min(min, rightInfo.min);
         }
         int max = head.value;
         if (rightInfo != null) {

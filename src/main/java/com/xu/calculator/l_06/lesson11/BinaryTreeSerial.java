@@ -27,19 +27,32 @@ public class BinaryTreeSerial {
         preSerial(node.right, queue);
     }
 
-    public static void preReSerial(Queue<String> queue) {
-
+    public static BinaryNode preDeSerial(Queue<String> queue) {
+        BinaryNode root = null;
+        if (queue.isEmpty()) {
+            return null;
+        }
+        String val = queue.poll();
+        if (null != val) {
+            root = new BinaryNode(Integer.parseInt(val));
+            root.left = preDeSerial(queue);
+            root.right = preDeSerial(queue);
+        }
+        return root;
     }
 
     public static void main(String[] args) {
-        BinaryNode root = BinaryNode.generate(2);
+        BinaryNode root = BinaryNode.generate2(2, 100);
         BinaryNode.pre(root);
+        System.out.println();
         System.out.println("serial *******");
         Queue<String> queue = serial(root);
-        while (!queue.isEmpty()) {
-            String s = queue.poll();
-            System.out.print(s + "--->");
-        }
+//        while (!queue.isEmpty()) {
+//            String s = queue.poll();
+//            System.out.print(s + "--->");
+//        }
+        BinaryNode binaryNode = preDeSerial(queue);
+        BinaryNode.pre(binaryNode);
     }
 
 }

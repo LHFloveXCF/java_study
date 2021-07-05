@@ -17,7 +17,7 @@ public class BinaryTreeDepthTraversal {
         Queue<BinaryNode> queue = new LinkedList<>();
         queue.add(head);
         while (!queue.isEmpty()) {
-            BinaryNode node = queue.poll();
+            BinaryNode node = queue.remove();
             System.out.println(node.value);
             if (node.left != null) {
                 queue.add(node.left);

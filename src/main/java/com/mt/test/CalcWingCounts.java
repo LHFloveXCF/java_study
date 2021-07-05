@@ -27,6 +27,6 @@ public class CalcWingCounts {
     }
 
     public static void main(String[] args) {
-        System.out.println(calcWingCounts(1));
+        System.out.println(calcWingCounts(8));
     }
 }

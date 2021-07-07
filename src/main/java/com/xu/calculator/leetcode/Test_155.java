@@ -1,6 +1,7 @@
 package com.xu.calculator.leetcode;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 /**
  * java_study
@@ -8,13 +9,100 @@ import java.util.Arrays;
  */
 public class Test_155 {
 
-    public class MinStack {
+    public static void main(String[] args) {
+        MinStack stack = new MinStack();
+        stack.push(2);
+        stack.push(0);
+        stack.push(3);
+        stack.push(0);
+        System.out.println(stack.getMin());
+
+        stack.pop();
+        System.out.println(stack.getMin());
+        stack.pop();
+        System.out.println(stack.getMin());
+        stack.pop();
+        System.out.println(stack.getMin());
+    }
+
+    public static class MinStack {
+        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> help = new Stack<>();
+        /** initialize your data structure here. */
+        public MinStack() {
+        }
+
+        public void push(int val) {
+            if (stack.isEmpty()) {
+                stack.push(val);
+                help.push(val);
+            } else {
+                Integer min = help.peek();
+                min = Math.min(min, val);
+                help.push(min);
+                stack.push(val);
+            }
+        }
+
+        public void pop() {
+            stack.pop();
+            help.pop();
+        }
+
+        public int top() {
+            return stack.peek();
+        }
+
+        public int getMin() {
+            return help.peek();
+        }
+    }
+
+
+    // 会越界
+    public static class MinStack3{
+        Stack<Integer> stack = new Stack<>();
+        int min;
+        /** initialize your data structure here. */
+        public MinStack3() {
+            min = 0;
+        }
+
+        public void push(int val) {
+            if (stack.isEmpty()) {
+                min = val;
+                stack.push(0);
+            } else {
+                stack.push(val - min);
+                min = Math.min(min, val);
+            }
+        }
+
+        public void pop() {
+            Integer pop = stack.pop();
+            if (pop < 0) {
+                min = min - pop;
+            }
+        }
+
+        public int top() {
+            return stack.peek() + min;
+        }
+
+        public int getMin() {
+            return min;
+        }
+    }
+
+
+    // wrong method
+    public class MinStack2 {
         int[] elements;
         int elementsCount;
         int size;
         int min;
 
-        public MinStack() {
+        public MinStack2() {
             size = 10;
             elementsCount = 0;
             elements = new int[size];

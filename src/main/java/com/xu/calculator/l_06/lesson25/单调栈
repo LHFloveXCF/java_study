@@ -22,3 +22,8 @@
 题目四
 给定一个二维数组matrix，其中的值不是0就是1，
 返回全部由1组成的最大子矩形，内部有多少个1
+
+题目五
+给定一个数组arr，
+返回所有子数组中最小值的累加和
+力扣链接：https://leetcode-cn.com/problems/sum-of-subarray-minimums/

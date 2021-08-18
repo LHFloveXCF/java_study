@@ -106,6 +106,7 @@ public class SBTTree {
         }
 
         private SBTNode<K, V> add(SBTNode<K, V> cur, K key, V value) {
+            // base case
             if (null == cur) {
                 return new SBTNode<>(key, value);
             }

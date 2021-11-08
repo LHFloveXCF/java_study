@@ -1,15 +1,5 @@
 package com.xu.netty.day01.net;
 
-import com.xu.netty.day01.ClientChannelInboundHandler;
-import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelPipeline;
-import io.netty.channel.EventLoopGroup;
-import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
-import io.netty.channel.socket.nio.NioSocketChannel;
-
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -29,7 +19,7 @@ public class ClientFrame extends Frame {
 
     public void updateMsg(String toString) {
         this.ta.setText(ta.getText() + System.getProperty("line.separator") + toString);
-        System.out.println(toString);
+        // System.out.println(toString);
     }
 
     private static class InnerClientFrame {

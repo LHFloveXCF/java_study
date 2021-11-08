@@ -1,6 +1,5 @@
 package com.xu.netty.day01.net;
 
-import com.xu.netty.day01.ClientChannelInboundHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -66,9 +65,9 @@ class MyClientChannelInBoundHandler extends ChannelInboundHandlerAdapter {
         // System.out.println("read " + ctx);
         ByteBuf buf = (ByteBuf) msg;
         String string = buf.toString(CharsetUtil.UTF_8);
-        System.out.println(string);
+        // System.out.println(string);
         ClientFrame frame = ClientFrame.getFrame();
-        System.out.println(frame.hashCode());
+        // System.out.println(frame.hashCode());
         frame.updateMsg(string);
     }
 }

@@ -1,4 +1,4 @@
-package com.xu;
+package com.xu.mca.local.singleton;
 
 /**
  * java_study

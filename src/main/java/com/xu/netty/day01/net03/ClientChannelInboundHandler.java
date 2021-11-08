@@ -1,6 +1,6 @@
-package com.xu.netty.day01;
+package com.xu.netty.day01.net03;
 
-import com.xu.netty.day01.net.ClientFrame;
+import com.xu.netty.day01.net01.ClientFrame;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

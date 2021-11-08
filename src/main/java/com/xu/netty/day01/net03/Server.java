@@ -1,4 +1,4 @@
-package com.xu.netty.day01;
+package com.xu.netty.day01.net03;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

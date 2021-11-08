@@ -1,4 +1,4 @@
-package com.xu.netty.day01.net;
+package com.xu.netty.day01.net01;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;

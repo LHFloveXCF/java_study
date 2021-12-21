@@ -9,6 +9,12 @@ import java.util.Arrays;
  */
 public class Sort {
     @Test
+    public void heapSort() {
+
+    }
+
+
+    @Test
     public void mergerSort() {
         print();
         int length = sourceArray.length;

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ObjectSize">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../java_test/object_seize/out/artifacts/ObjectSize/ObjectSize.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

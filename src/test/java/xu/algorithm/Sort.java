@@ -3,14 +3,70 @@ package xu.algorithm;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /**
  * java_study
  */
 public class Sort {
     @Test
-    public void heapSort() {
+    public void heapSort2() {
+        print();
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        int length = sourceArray.length;
+        for (int i = length; i > 0; i--) {
+            queue.add(sourceArray[i - 1]);
+        }
+        for (int i = 0; i < length; i++) {
+            sourceArray[i] = queue.poll();
+        }
+        print();
+    }
 
+    @Test
+    public void heapSort() {
+        print();
+        int length = sourceArray.length;
+        for (int i = 0; i < length; i++) {
+            heapInsert(sourceArray, i);
+        }
+        print();
+        System.out.println();
+        for (int i = length; i > 0; i--) {
+            swap(sourceArray, i - 1, 0);
+            heapIfy(sourceArray, i - 1);
+            heapInsert(sourceArray, 0);
+            // print();
+        }
+        print();
+    }
+
+    private void heapIfy(int[] arr, int heapSize) {
+        int index = 0;
+        while (index * 2 + 1 < heapSize) {
+            int left = index * 2;
+            int largest = left + 1 < heapSize ? arr[left] > arr[left + 1] ? left : left + 1 : left;
+            if (arr[index] > arr[largest]) {
+                break;
+            }
+            if (index != largest) {
+                swap(arr, index, largest);
+            }
+            index = largest;
+        }
+    }
+
+    private void heapInsert(int[] arr, int index) {
+        while (arr[index] > arr[(index - 1) / 2]) {
+            swap(arr, index, (index - 1) / 2);
+            index = (index - 1) / 2;
+        }
+    }
+
+    private void swap(int[] arr, int j, int i) {
+        int temp = arr[j];
+        arr[j] = arr[i];
+        arr[i] = temp;
     }
 
 

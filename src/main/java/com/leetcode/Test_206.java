@@ -9,7 +9,7 @@ import com.leetcode.help.ListNode;
 public class Test_206 {
     public static void main(String[] args) {
         ListNode head = new ListNode();
-        // new Test_206().reverseList(head);
+        new Test_206().reverseList(head);
     }
 
     public ListNode reverseList(ListNode head) {

@@ -83,8 +83,7 @@ public class Test_29 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Test_29().divide2(-2147483648
-                , -1));
+        System.out.println(new Test_29().divide2(-2147483648, -1));
 
         System.out.println();
         System.out.println(~Integer.MIN_VALUE + 1);
